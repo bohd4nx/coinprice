@@ -1,5 +1,5 @@
 ### ⭐About the Project
-Crypto Tracker is a Python application that tracks the prices of specified cryptocurrencies using the CoinGecko API and sends the latest price updates to a Telegram channel at regular intervals.
+Crypto Tracker is a Python application that tracks the prices of specified cryptocurrencies using the [CoinGecko API](https://www.coingecko.com/en/api) and sends the latest price updates to a Telegram channel at regular intervals.
 
 <h3 align="center">
     🔹
@@ -13,7 +13,7 @@ Crypto Tracker is a Python application that tracks the prices of specified crypt
 ### Features 🚀
 - 💰Tracks the prices of specified cryptocurrencies using the CoinGecko API.
 - 📈Sends updates to a Telegram channel every 15 seconds.
-- ⚙️Easy configuration via a `config.ini` file.
+- ⚙️Easy configuration via a [`config.ini`](https://github.com/7GitGuru/crypto-tracker/blob/main/config/config.ini) file.
 - 💡Simple and lightweight.
 
 ### 🛠️Project Structure:
