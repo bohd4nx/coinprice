@@ -25,18 +25,6 @@ crypto_tracker/
 │
 ├── config/
 │   └── config.ini
-│
-├── crypto_tracker - discord/
-│   ├── config/
-│        └── config.ini
-│   │
-│   ├── api_handling.py
-│   ├── discord_bot.py
-│   ├── requirements.txt
-│   └── README.md
-│
-├── tests/
-│   └──  tests.py
 │  
 ├── api_handling.py
 ├── main.py
@@ -64,7 +52,7 @@ crypto_tracker/
    ```
    python main.py
    ```
-- 🤖 Discord bot [installation instructions](https://github.com/7GitGuru/crypto-tracker/blob/main/crypto_tracker%20-%20discord/README.md)
+- 🤖 Discord bot [installation instructions](https://github.com/7GitGuru/crypto-tracker/blob/discord/README.md)
 
 ### ⚙️DEMO
 
