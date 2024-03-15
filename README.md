@@ -2,6 +2,11 @@
 
 Crypto Tracker is a Python module that allows you to track the prices of cryptocurrencies in real-time. You can specify the cryptocurrency you want to track and the module will provide you with live updates on its price.
 
+[![PyPi license](https://badgen.net/pypi/license/pip/)](https://pypi.org/project/coinprice/)
+[![PyPI download month](https://img.shields.io/pypi/dm/coinprice.svg)](https://pypi.org/project/coinprice/)
+[![PyPI format](https://img.shields.io/pypi/format/coinprice.svg)](https://pypi.org/project/coinprice/)
+[![PyPI version fury.io](https://badge.fury.io/py/coinprice.svg)](https://pypi.org/project/coinprice/)
+
 ## Features
 
 - Track the prices of various cryptocurrencies.
