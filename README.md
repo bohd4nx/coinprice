@@ -15,6 +15,11 @@ Crypto Tracker is a Python module that allows you to track the prices of cryptoc
 - Set a custom interval for price updates.
 - Open-source project.
 
+---
+
+![Screenshot 2024-03-15 201610](https://github.com/7GitGuru/crypto-tracker/assets/154711952/cd6685ed-3736-4d96-b8dd-23c6fe1e019b)
+
+---
 ## Installation
 
 You can install Crypto Tracker using pip:
