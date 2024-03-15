@@ -10,6 +10,8 @@ Crypto Tracker is a Python module that allows you to track the prices of cryptoc
 ## Features
 
 - Track the prices of various cryptocurrencies.
+- Flexible Command-line Usage.
+- Customizable.
 - Set a custom interval for price updates.
 - Open-source project.
 
@@ -34,8 +36,9 @@ Replace `<coin>` with the cryptocurrency you want to track (e.g., bitcoin, ether
 Example usage:
 
 ```
-price bitcoin
-price ethereum --interval 15
+price btc                        Track the price of Bitcoin from all exchanges.
+price eth --binance              Track the price of Bitcoin from Binance.
+price ltc --bybit --interval 10  Track the price of Ethereum from Bybit with a check interval of 10 seconds.
 ```
 
 ## Contributing
@@ -46,3 +49,6 @@ Contributions to Crypto Tracker are welcome! If you find any bugs or have sugges
 
 Crypto Tracker is released under the MIT License. See [LICENSE](https://github.com/7GitGuru/crypto-tracker/blob/main/LICENSE) for details.
 
+### Show your support:
+
+[![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/bohd4n)
