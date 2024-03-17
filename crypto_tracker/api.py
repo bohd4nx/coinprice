@@ -22,11 +22,11 @@ def Bitfinex(coin):
     return float(data['last_price'])
 
 
-def CoinGecko(coin):
-    url = f"https://api.coingecko.com/api/v3/simple/price?ids={coin}&vs_currencies=usd"
-    response = requests.get(url)
-    data = response.json()
-    return data[coin]['usd']
+# def CoinGecko(coin):
+#     url = f"https://api.coingecko.com/api/v3/simple/price?ids={coin}&vs_currencies=usd"
+#     response = requests.get(url)
+#     data = response.json()
+#     return data[coin]['usd']
 
 
 def TradingView(coin):
