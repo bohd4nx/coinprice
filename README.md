@@ -2,11 +2,16 @@
 
 Crypto Tracker is a Python module that allows you to track the prices of cryptocurrencies in real-time. You can specify the cryptocurrency you want to track and the module will provide you with live updates on its price.
 
+<h3 align="center">
+
 [![PyPi license](https://badgen.net/pypi/license/pip/)](https://pypi.org/project/coinprice/)
 [![PyPI download month](https://img.shields.io/pypi/dm/coinprice.svg)](https://pypi.org/project/coinprice/)
 [![PyPI format](https://img.shields.io/pypi/format/coinprice.svg)](https://pypi.org/project/coinprice/)
 [![PyPI version fury.io](https://badge.fury.io/py/coinprice.svg)](https://pypi.org/project/coinprice/)
 
+</h3>
+
+---
 ## Features
 
 - Track the prices of various cryptocurrencies.
@@ -15,11 +20,12 @@ Crypto Tracker is a Python module that allows you to track the prices of cryptoc
 - Set a custom interval for price updates.
 - Open-source project.
 
----
+--- 
 
-![Screenshot 2024-03-15 201610](https://github.com/7GitGuru/crypto-tracker/assets/154711952/cd6685ed-3736-4d96-b8dd-23c6fe1e019b)
+![image](https://github.com/7GitGuru/crypto-tracker/assets/154711952/e931d7e4-8714-4dd2-8051-aba7bfe0756d)
 
----
+----
+
 ## Installation
 
 You can install Crypto Tracker using pip:
@@ -32,18 +38,20 @@ pip install coinprice
 
 To track the price of a cryptocurrency, simply run the following command:
 
+**[Here you can find a list of all cryptocurrencies you can use.](https://github.com/7GitGuru/crypto-tracker/blob/main/coin-names.json)**
+
 ```
-price <coin> [--interval INTERVAL]
+price <coin> [--interval time]
 ```
 
-Replace `<coin>` with the cryptocurrency you want to track (e.g., bitcoin, ethereum). You can optionally specify the interval (in seconds) for price updates using the `--interval` flag. By default, the interval is set to 30 seconds.
+Replace `<coin>` with the cryptocurrency you want to track (e.g., bitcoin, ethereum). You can optionally specify the interval (in seconds) for price updates using the `--interval` flag. By default, the interval is set to 15 seconds.
 
 Example usage:
 
 ```
 price btc                        Track the price of Bitcoin from all exchanges.
 price eth --binance              Track the price of Bitcoin from Binance.
-price ltc --bybit --interval 10  Track the price of Ethereum from Bybit with a check interval of 10 seconds.
+price ltc --bybit --interval 10  Track the price of Litecoin from Bybit with a check interval of 10 seconds.
 ```
 
 ## Contributing
