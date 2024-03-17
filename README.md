@@ -7,7 +7,15 @@ Crypto Tracker is a Python module that allows you to track the prices of cryptoc
 [![PyPi license](https://badgen.net/pypi/license/pip/)](https://pypi.org/project/coinprice/)
 [![PyPI download month](https://img.shields.io/pypi/dm/coinprice.svg)](https://pypi.org/project/coinprice/)
 [![PyPI format](https://img.shields.io/pypi/format/coinprice.svg)](https://pypi.org/project/coinprice/)
-[![PyPI version fury.io](https://badge.fury.io/py/coinprice.svg)](https://pypi.org/project/coinprice/)
+[![PyPi version](https://badgen.net/pypi/v/coinprice/)](https://pypi.org/project/coinprice)
+[![GitHub branches](https://badgen.net/github/branches/7GitGuru/crypto-tracker)](https://github.com/7GitGuru/crypto-tracker/branches)
+[![GitHub release](https://img.shields.io/github/release/7GitGuru/crypto-tracker.svg)](https://github.com/7GitGuru/crypto-tracker/releases/)
+
+<!--- 
+[![Github all releases](https://img.shields.io/github/downloads/7GitGuru/crypto-tracker/total.svg)](https://github.com/7GitGuru/crypto-tracker/releases/)
+
+[![PyPI version fury.io](https://badge.fury.io/py/coinprice.svg)](https://pypi.org/project/coinprice/) 
+-->
 
 </h3>
 
@@ -53,6 +61,8 @@ price btc                        Track the price of Bitcoin from all exchanges.
 price eth --binance              Track the price of Bitcoin from Binance.
 price ltc --bybit --interval 10  Track the price of Litecoin from Bybit with a check interval of 10 seconds.
 ```
+
+### [Check out Telegram version!](https://github.com/7GitGuru/crypto-tracker/tree/telegram)
 
 ## Contributing
 
