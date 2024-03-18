@@ -46,7 +46,7 @@ pip install coinprice
 
 To track the price of a cryptocurrency, simply run the following command:
 
-**[Here you can find a list of all cryptocurrencies you can use.](https://github.com/7GitGuru/crypto-tracker/blob/main/coin-names.json)** (The list is incomplete; It is impossible to list all the names.)
+**[Here you can find a list of cryptocurrencies you can use.](https://github.com/7GitGuru/crypto-tracker/blob/main/coin-names.json)** (The list is incomplete.)
 
 ```
 price <coin> [--interval time]
