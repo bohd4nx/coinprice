@@ -22,6 +22,13 @@ def Bitfinex(coin):
     return float(data['last_price'])
 
 
+def Coinbase(coin):
+    url = f"https://api.coinbase.com/v2/prices/{coin.upper()}-USD/spot"
+    response = requests.get(url)
+    data = response.json()
+    return float(data['data']['amount'])
+
+
 # def CoinGecko(coin):
 #     url = f"https://api.coingecko.com/api/v3/simple/price?ids={coin}&vs_currencies=usd"
 #     response = requests.get(url)
@@ -29,11 +36,11 @@ def Bitfinex(coin):
 #     return data[coin]['usd']
 
 
-def TradingView(coin):
-    url = f"https://api.tradingview.com/crypto/quotesUSD?symbols={coin}"
-    response = requests.get(url)
-    data = response.json()
-    return data[0]['price']
+# def TradingView(coin):
+#     url = f"https://api.tradingview.com/crypto/quotesUSD?symbols={coin}"
+#     response = requests.get(url)
+#     data = response.json()
+#     return data[0]['price']
 
 
 # def OKX(coin):
@@ -41,9 +48,3 @@ def TradingView(coin):
 #     response = requests.get(url)
 #     data = response.json()
 #     return float(data['data'][0]['last'])
-
-def Coinbase(coin):
-    url = f"https://api.coinbase.com/v2/prices/{coin.upper()}-USD/spot"
-    response = requests.get(url)
-    data = response.json()
-    return float(data['data']['amount'])
