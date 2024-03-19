@@ -7,15 +7,7 @@ Crypto Tracker is a Python module that allows you to track the prices of cryptoc
 [![PyPi license](https://badgen.net/pypi/license/pip/)](https://pypi.org/project/coinprice/)
 [![PyPI download month](https://img.shields.io/pypi/dm/coinprice.svg)](https://pypi.org/project/coinprice/)
 [![PyPI format](https://img.shields.io/pypi/format/coinprice.svg)](https://pypi.org/project/coinprice/)
-[![PyPi version](https://badgen.net/pypi/v/coinprice/)](https://pypi.org/project/coinprice)
-[![GitHub branches](https://badgen.net/github/branches/7GitGuru/crypto-tracker)](https://github.com/7GitGuru/crypto-tracker/branches)
-[![GitHub release](https://img.shields.io/github/release/7GitGuru/crypto-tracker.svg)](https://github.com/7GitGuru/crypto-tracker/releases/)
-
-<!--- 
-[![Github all releases](https://img.shields.io/github/downloads/7GitGuru/crypto-tracker/total.svg)](https://github.com/7GitGuru/crypto-tracker/releases/)
-
-[![PyPI version fury.io](https://badge.fury.io/py/coinprice.svg)](https://pypi.org/project/coinprice/) 
--->
+[![PyPI version fury.io](https://badge.fury.io/py/coinprice.svg)](https://pypi.org/project/coinprice/)
 
 </h3>
 
@@ -30,7 +22,7 @@ Crypto Tracker is a Python module that allows you to track the prices of cryptoc
 
 --- 
 
-![image](https://github.com/7GitGuru/crypto-tracker/assets/154711952/e931d7e4-8714-4dd2-8051-aba7bfe0756d)
+![image](https://github.com/7GitGuru/crypto-tracker/assets/154711952/d5386490-30ca-4bdd-85ec-c0f936cfd5da)
 
 ----
 
@@ -46,7 +38,7 @@ pip install coinprice
 
 To track the price of a cryptocurrency, simply run the following command:
 
-**[Here you can find a list of cryptocurrencies you can use.](https://github.com/7GitGuru/crypto-tracker/blob/main/coin-names.json)** (The list is incomplete.)
+**[Here you can find a list of all cryptocurrencies you can use.](https://github.com/7GitGuru/crypto-tracker/blob/main/coin-names.json)**
 
 ```
 price <coin> [--interval time]
@@ -66,7 +58,7 @@ price ltc --bybit --interval 10  Track the price of Litecoin from Bybit with a c
 
 ## Contributing
 
-Contributions to Crypto Tracker are welcome! If you find any bugs or have suggestions for new features, please open an issue or submit a pull request on GitHub.
+Contributions to Crypto Tracker are welcome! If you find any bugs or have suggestions for new features, please open an issue or submit a [pull request](https://github.com/7GitGuru/crypto-tracker/pulls) on GitHub.
 
 ## License
 
