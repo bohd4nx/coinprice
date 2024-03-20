@@ -5,9 +5,9 @@ Crypto Tracker is a Python module that allows you to track the prices of cryptoc
 <h3 align="center">
 
 [![PyPi license](https://badgen.net/pypi/license/pip/)](https://pypi.org/project/coinprice/)
-[![PyPI download month](https://img.shields.io/pypi/dm/coinprice.svg)](https://pypi.org/project/coinprice/)
+[![Downloads](https://static.pepy.tech/badge/coinprice)](https://pepy.tech/project/coinprice)
 [![PyPI format](https://img.shields.io/pypi/format/coinprice.svg)](https://pypi.org/project/coinprice/)
-[![PyPI version fury.io](https://badge.fury.io/py/coinprice.svg)](https://pypi.org/project/coinprice/)
+[![PyPI version](https://img.shields.io/pypi/v/coinprice)](https://pypi.org/project/coinprice/)
 
 </h3>
 
