@@ -82,31 +82,7 @@ def main():
                         f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on Bitfinex is {Fore.RED}not available{Style.RESET_ALL}\n")
                 time.sleep(interval)
 
-        # if args.coingecko:
-        #     print(
-        #         f"Tracking {Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on {Fore.CYAN}CoinGecko{Style.RESET_ALL} with an interval of {Fore.RED}{interval} seconds.{Style.RESET_ALL} Press Ctrl+C to exit.\n")
-        #     while True:
-        #         try:
-        #             print(
-        #                 f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on CoinGecko is {Fore.LIGHTGREEN_EX}${CoinGecko(coin)}{Style.RESET_ALL}\n")
-        #         except Exception:
-        #             print(
-        #                 f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on CoinGecko is {Fore.RED}not available{Style.RESET_ALL}\n")
-        #         time.sleep(interval)
-
-        # if args.tradingview:
-        #     print(
-        #         f"Tracking {Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on {Fore.CYAN}TradingView{Style.RESET_ALL} with an interval of {Fore.RED}{interval} seconds.{Style.RESET_ALL} Press Ctrl+C to exit.\n")
-        #     while True:
-        #         try:
-        #             print(
-        #                 f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on TradingView is {Fore.LIGHTGREEN_EX}${TradingView(coin)}{Style.RESET_ALL}\n")
-        #         except Exception:
-        #             print(
-        #                 f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on TradingView is {Fore.RED}not available{Style.RESET_ALL}\n")
-        #         time.sleep(interval)
-
-        if not any([args.binance, args.bybit, args.coinbase]):  ## + args.coingecko | args.tradingview
+        if not any([args.binance, args.bybit, args.coinbase, args.bitfinex]):  ## + args.coingecko | args.tradingview
             print(
                 f"Tracking {Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on {Fore.CYAN}all available exchanges{Style.RESET_ALL} with an interval of {Fore.RED}{interval} seconds.{Style.RESET_ALL} Press Ctrl+C to exit.\n")
             while True:
@@ -130,22 +106,10 @@ def main():
                         f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on Coinbase is {Fore.RED}not available{Style.RESET_ALL}")
                 try:
                     print(
-                        f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on Bitfinex is {Fore.LIGHTGREEN_EX}${Binance(coin)}{Style.RESET_ALL}\n")
+                        f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on Bitfinex is {Fore.LIGHTGREEN_EX}${Bitfinex(coin)}{Style.RESET_ALL}\n")
                 except Exception:
                     print(
                         f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on Bitfinex is {Fore.RED}not available{Style.RESET_ALL}\n")
-                # try:
-                #     print(
-                #         f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on TradingView is {Fore.LIGHTGREEN_EX}${TradingView(coin)}{Style.RESET_ALL}")
-                # except Exception:
-                #     print(
-                #         f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on TradingView{Style.RESET_ALL} is {Fore.RED}not available{Style.RESET_ALL}")
-                # try:
-                #     print(
-                #         f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on {Fore.MAGENTA}CoinGecko{Style.RESET_ALL} is {Fore.GREEN}${CoinGecko(coin)}{Style.RESET_ALL}")
-                # except Exception:
-                #     print(
-                #         f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on {Fore.MAGENTA}CoinGecko{Style.RESET_ALL} is {Fore.RED}not available{Style.RESET_ALL}")
                 time.sleep(interval)
 
     except KeyboardInterrupt:
