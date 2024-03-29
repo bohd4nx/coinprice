@@ -29,6 +29,8 @@ def Coinbase(coin):
     return float(data['data']['amount'])
 
 
+# API is not working correctly:
+
 # def CoinGecko(coin):
 #     url = f"https://api.coingecko.com/api/v3/simple/price?ids={coin}&vs_currencies=usd"
 #     response = requests.get(url)
@@ -41,10 +43,3 @@ def Coinbase(coin):
 #     response = requests.get(url)
 #     data = response.json()
 #     return data[0]['price']
-
-
-# def OKX(coin):
-#     url = f"https://www.okex.com/api/market/v3/ticker/price?instId={coin.upper()}-USDT"
-#     response = requests.get(url)
-#     data = response.json()
-#     return float(data['data'][0]['last'])
