@@ -1,15 +1,21 @@
-# Crypto Tracker
+<h2 align="center">
+  Crypto Tracker<br/>
+  <a href="https://cryptotrack3r.vercel.app/" target="_blank">cryptotrack3r.vercel.app</a>
+</h2>
 
-Crypto Tracker is a Python module that allows you to track the prices of cryptocurrencies in real-time. You can specify the cryptocurrency you want to track and the module will provide you with live updates on its price.
+<p align="center">
+ Crypto Tracker is a Python module that allows you to track the prices of cryptocurrencies in real-time. 
+You can specify the cryptocurrency you want to track and the module will provide you with live updates on its price.
+</p>
 
-<h3 align="center">
+<div align="center">
 
 [![PyPi license](https://badgen.net/pypi/license/pip/)](https://pypi.org/project/coinprice/)
 [![Downloads](https://static.pepy.tech/badge/coinprice)](https://pepy.tech/project/coinprice)
 [![PyPI format](https://img.shields.io/pypi/format/coinprice.svg)](https://pypi.org/project/coinprice/)
 [![PyPI version](https://img.shields.io/pypi/v/coinprice)](https://pypi.org/project/coinprice/)
 
-</h3>
+</div>
 
 ---
 ## Features
