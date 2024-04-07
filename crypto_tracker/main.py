@@ -2,7 +2,6 @@ import argparse
 import time
 from colorama import Fore, Style
 from crypto_tracker.api import *
-# import random
 
 
 def main():
@@ -26,90 +25,79 @@ def main():
     parser.add_argument('--bybit', action='store_true', help='Track from Bybit.')
     parser.add_argument('--coinbase', action='store_true', help='Track from Coinbase.')
     parser.add_argument('--bitfinex', action='store_true', help='Track from Bitfinex.')
-    # parser.add_argument('--coingecko', action='store_true', help='Track from CoinGecko.')
-    # parser.add_argument('--tradingview', action='store_true', help='Track from TradingView.')
     args = parser.parse_args()
 
     coin = args.coin.lower()
     interval = args.interval
 
     try:
-        if args.binance:
-            print(
-                f"Tracking {Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on {Fore.CYAN}Binance{Style.RESET_ALL} with an interval of {Fore.RED}{interval} seconds.{Style.RESET_ALL} Press Ctrl+C to exit.\n")
-            while True:
-                try:
-                    print(
-                        f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on Binance is {Fore.LIGHTGREEN_EX}${Binance(coin)}{Style.RESET_ALL}\n")
-                except Exception:
-                    print(
-                        f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on Binance is {Fore.RED}not available{Style.RESET_ALL}\n")
-                time.sleep(interval)
+        previous_prices = {}
 
-        if args.bybit:
+        def print_price(exchange, price):
+            if exchange in previous_prices:
+                previous_price = previous_prices[exchange]
+                if price < previous_price:
+                    color = Fore.RED
+                elif price > previous_price:
+                    color = Fore.GREEN
+                else:
+                    color = Fore.WHITE
+            else:
+                color = Fore.WHITE
             print(
-                f"Tracking {Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on {Fore.CYAN}Bybit{Style.RESET_ALL} with an interval of {Fore.RED}{interval} seconds.{Style.RESET_ALL} Press Ctrl+C to exit.\n")
-            while True:
-                try:
-                    print(
-                        f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on Bybit is {Fore.LIGHTGREEN_EX}${Bybit(coin)}{Style.RESET_ALL}\n")
-                except Exception:
-                    print(
-                        f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on Bybit{Style.RESET_ALL} is {Fore.RED}not available{Style.RESET_ALL}\n")
-                time.sleep(interval)
+                f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on {exchange} is {color}${price}{Style.RESET_ALL}")
+            # print("\n")
 
-        if args.coinbase:
-            print(
-                f"Tracking {Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on {Fore.CYAN}Coinbase{Style.RESET_ALL} with an interval of {Fore.RED}{interval} seconds.{Style.RESET_ALL} Press Ctrl+C to exit.\n")
-            while True:
-                try:
-                    print(
-                        f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on Coinbase is {Fore.LIGHTGREEN_EX}${Coinbase(coin)}{Style.RESET_ALL}\n")
-                except Exception:
-                    print(
-                        f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on Coinbase is {Fore.RED}not available{Style.RESET_ALL}\n")
-                time.sleep(interval)
+        def print_divider():
+            print(f"{Fore.MAGENTA}{'-' * 50}{Style.RESET_ALL}")
 
-        if args.bitfinex:
-            print(
-                f"Tracking {Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on {Fore.CYAN}Bitfinex{Style.RESET_ALL} with an interval of {Fore.RED}{interval} seconds.{Style.RESET_ALL} Press Ctrl+C to exit.\n")
-            while True:
-                try:
-                    print(
-                        f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on Bitfinex is {Fore.LIGHTGREEN_EX}${Binance(coin)}{Style.RESET_ALL}\n")
-                except Exception:
-                    print(
-                        f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on Bitfinex is {Fore.RED}not available{Style.RESET_ALL}\n")
-                time.sleep(interval)
+        for exchange in ['binance', 'bybit', 'coinbase', 'bitfinex']:
+            # print(f"Tracking {Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on {Fore.CYAN}{exchange}{Style.RESET_ALL} with an interval of {Fore.RED}{interval} seconds.{Style.RESET_ALL}\n")
+            if getattr(args, exchange):
+                while True:
+                    try:
+                        price = globals()[exchange.capitalize()](coin)
+                        print_price(exchange.capitalize(), price)
+                        previous_prices[exchange.capitalize()] = price
+                    except Exception:
+                        print(
+                            f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on {exchange.capitalize()} is {Fore.RED}not available{Style.RESET_ALL}")
+                        # print("\n")
+                    time.sleep(interval)
 
-        if not any([args.binance, args.bybit, args.coinbase, args.bitfinex]):  ## + args.coingecko | args.tradingview
-            print(
-                f"Tracking {Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on {Fore.CYAN}all available exchanges{Style.RESET_ALL} with an interval of {Fore.RED}{interval} seconds.{Style.RESET_ALL} Press Ctrl+C to exit.\n")
+        if not any([args.binance, args.bybit, args.coinbase, args.bitfinex]):
+            print(f"Tracking {Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on {Fore.CYAN}all available exchanges{Style.RESET_ALL} with an interval of {Fore.RED}{interval} seconds.{Style.RESET_ALL}\n")
+            print_divider()
             while True:
                 try:
-                    print(
-                        f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on Binance is {Fore.LIGHTGREEN_EX}${Binance(coin)}{Style.RESET_ALL}")
+                    price = Binance(coin)
+                    print_price("Binance", price)
+                    previous_prices["Binance"] = price
                 except Exception:
                     print(
                         f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on Binance is {Fore.RED}not available{Style.RESET_ALL}")
                 try:
-                    print(
-                        f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on Bybit is {Fore.LIGHTGREEN_EX}${Bybit(coin)}{Style.RESET_ALL}")
+                    price = Bybit(coin)
+                    print_price("Bybit", price)
+                    previous_prices["Bybit"] = price
                 except Exception:
                     print(
                         f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on Bybit is {Fore.RED}not available{Style.RESET_ALL}")
                 try:
-                    print(
-                        f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on Coinbase is {Fore.LIGHTGREEN_EX}${Coinbase(coin)}{Style.RESET_ALL}")
+                    price = Coinbase(coin)
+                    print_price("Coinbase", price)
+                    previous_prices["Coinbase"] = price
                 except Exception:
                     print(
                         f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on Coinbase is {Fore.RED}not available{Style.RESET_ALL}")
                 try:
-                    print(
-                        f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on Bitfinex is {Fore.LIGHTGREEN_EX}${Bitfinex(coin)}{Style.RESET_ALL}\n")
+                    price = Bitfinex(coin)
+                    print_price("Bitfinex", price)
+                    previous_prices["Bitfinex"] = price
                 except Exception:
                     print(
-                        f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on Bitfinex is {Fore.RED}not available{Style.RESET_ALL}\n")
+                        f"{Fore.LIGHTYELLOW_EX}{coin.upper()}{Style.RESET_ALL} price on Bitfinex is {Fore.RED}not available{Style.RESET_ALL}")
+                print_divider()
                 time.sleep(interval)
 
     except KeyboardInterrupt:

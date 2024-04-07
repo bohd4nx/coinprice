@@ -29,8 +29,6 @@ def Coinbase(coin):
     return float(data['data']['amount'])
 
 
-# API is not working correctly:
-
 # def CoinGecko(coin):
 #     url = f"https://api.coingecko.com/api/v3/simple/price?ids={coin}&vs_currencies=usd"
 #     response = requests.get(url)
