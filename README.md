@@ -28,7 +28,9 @@ You can specify the cryptocurrency you want to track and the module will provide
 
 --- 
 
-![image](https://github.com/7GitGuru/crypto-tracker/assets/154711952/d5386490-30ca-4bdd-85ec-c0f936cfd5da)
+![Screenshot 2024-04-07 210653](https://github.com/7GitGuru/crypto-tracker/assets/154711952/0df38415-6b97-4d06-ba31-e6a421d520bf)
+![Screenshot 2024-04-07 210805](https://github.com/7GitGuru/crypto-tracker/assets/154711952/908a0b26-f6ce-41ae-9a6b-6941ecdf4f76)
+
 
 ----
 
