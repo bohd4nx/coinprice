@@ -1,6 +1,6 @@
 <h2 align="center">
   Crypto Tracker<br/>
-  <a href="https://cryptotrack3r.vercel.app/" target="_blank">cryptotrack3r.vercel.app</a>
+  <a href="https://coinprice.bohd4n.dev/" target="_blank">coinprice.bohd4n.dev</a>
 </h2>
 
 <p align="center">
@@ -14,6 +14,7 @@ You can specify the cryptocurrency you want to track and the module will provide
 [![Downloads](https://static.pepy.tech/badge/coinprice)](https://pepy.tech/project/coinprice)
 [![PyPI format](https://img.shields.io/pypi/format/coinprice.svg)](https://pypi.org/project/coinprice/)
 [![PyPI version](https://img.shields.io/pypi/v/coinprice)](https://pypi.org/project/coinprice/)
+[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/coinprice.bohd4n.dev.svg)](https://coinprice.bohd4n.dev/)
 
 </div>
 
