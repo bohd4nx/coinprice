@@ -4,7 +4,7 @@
 </h2>
 
 <p align="center">
-Crypto Tracker is a Python module that allows you to track the prices of cryptocurrencies in real-time. 
+ Crypto Tracker is a Python module that allows you to track the prices of cryptocurrencies in real-time. 
 You can specify the cryptocurrency you want to track and the module will provide you with live updates on its price.
 </p>
 
@@ -19,6 +19,7 @@ You can specify the cryptocurrency you want to track and the module will provide
 </div>
 
 ---
+
 ## Features
 
 - Track the prices of various cryptocurrencies.
@@ -29,11 +30,33 @@ You can specify the cryptocurrency you want to track and the module will provide
 
 --- 
 
-![Screenshot 2024-04-07 210653](https://github.com/bohd4nx/crypto-tracker/assets/154711952/0df38415-6b97-4d06-ba31-e6a421d520bf)
-![Screenshot 2024-04-07 210805](https://github.com/bohd4nx/crypto-tracker/assets/154711952/908a0b26-f6ce-41ae-9a6b-6941ecdf4f76)
+## Project Tree
 
 
-----
+```
+
+crypto_tracker/
+
+│
+├── main.py           # Main file to run
+├── tracker.py        # Tracking logic and price display
+├── cli.py            # Handling command line arguments
+├── api/
+│ ├── __init__.py     # API package
+│ ├── binance.py      # Get price from Binance
+│ ├── bybit.py        # Get price from Bybit
+│ ├── bitfinex.py     # Get price from Bitfinex
+│ └── coinbase.py     # Get price from Coinbase
+└── utils.py          # Utilities and helper functions
+
+```
+
+---
+
+![demo](https://github.com/7GitGuru/crypto-tracker/assets/154711952/0df38415-6b97-4d06-ba31-e6a421d520bf)
+![demo2](https://github.com/7GitGuru/crypto-tracker/assets/154711952/908a0b26-f6ce-41ae-9a6b-6941ecdf4f76)
+
+---
 
 ## Installation
 
@@ -47,10 +70,19 @@ pip install coinprice
 
 To track the price of a cryptocurrency, simply run the following command:
 
-**[Here you can find a list of all cryptocurrencies you can use.](https://github.com/bohd4nx/crypto-tracker/blob/main/coin-names.json)**
+[//]: # (**[Here you can find a list of all cryptocurrencies you can use.]&#40;https://github.com/7GitGuru/crypto-tracker/blob/main/coin-names.json&#41;**)
+
+
+```
+price <coin>
+```
 
 ```
 price <coin> [--interval time]
+```
+
+```
+price <coin> [--exchange name] [--interval time]
 ```
 
 Replace `<coin>` with the cryptocurrency you want to track (e.g., bitcoin, ethereum). You can optionally specify the interval (in seconds) for price updates using the `--interval` flag. By default, the interval is set to 15 seconds.
@@ -58,21 +90,23 @@ Replace `<coin>` with the cryptocurrency you want to track (e.g., bitcoin, ether
 Example usage:
 
 ```
-price btc                        Track the price of Bitcoin from all exchanges.
-price eth --binance              Track the price of Bitcoin from Binance.
-price ltc --bybit --interval 10  Track the price of Litecoin from Bybit with a check interval of 10 seconds.
+price btc                           Track the price of Bitcoin from all exchanges.
+price eth --binance                 Track the price of Ethereum from Binance.
+price ltc --coinbase --interval 10  Track the price of Litecoin from Coinbase with a check interval of 10 seconds.
 ```
 
-### [Check out Telegram version!](https://github.com/bohd4nx/crypto-tracker/tree/telegram)
+### [Check out Telegram version!](https://github.com/7GitGuru/crypto-tracker/tree/telegram)
 
 ## Contributing
 
-Contributions to Crypto Tracker are welcome! If you find any bugs or have suggestions for new features, please open an issue or submit a [pull request](https://github.com/bohd4nx/crypto-tracker/pulls) on GitHub.
+Contributions to Crypto Tracker are welcome! If you find any bugs or have suggestions for new features, please open an issue or submit a [pull request](https://github.com/7GitGuru/crypto-tracker/pulls) on GitHub.
 
 ## License
 
-Crypto Tracker is released under the MIT License. See [LICENSE](https://github.com/bohd4nx/crypto-tracker/blob/main/LICENSE) for details.
+Crypto Tracker is released under the MIT License. See [LICENSE](https://github.com/7GitGuru/crypto-tracker/blob/main/LICENSE) for details.
 
-### Show your support:
+<h2 align="center">
 
-[![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/bohd4n)
+[Donate](https://www.buymeacoffee.com/bohd4n)
+
+</h2>
