@@ -1,10 +1,10 @@
 <h2 align="center">
-  Crypto Tracker<br/>
+  Crypto Tracker <em>(coinprice)</em><br/>
   <a href="https://coinprice.bohd4n.dev/" target="_blank">coinprice.bohd4n.dev</a>
 </h2>
 
 <p align="center">
- Crypto Tracker is a Python module that allows you to track the prices of cryptocurrencies in real-time. 
+ Crypto Tracker (coinprice) is a Python module that allows you to track the prices of cryptocurrencies in real-time. 
 You can specify the cryptocurrency you want to track and the module will provide you with live updates on its price.
 </p>
 
@@ -22,45 +22,27 @@ You can specify the cryptocurrency you want to track and the module will provide
 
 ## Features
 
-- Track the prices of various cryptocurrencies.
-- Flexible Command-line Usage.
-- Customizable.
-- Set a custom interval for price updates.
-- Open-source project.
-
---- 
-
-## Project Tree
-
-
-```
-
-crypto_tracker/
-
-│
-├── main.py           # Main file to run
-├── tracker.py        # Tracking logic and price display
-├── cli.py            # Handling command line arguments
-├── api/
-│ ├── __init__.py     # API package
-│ ├── binance.py      # Get price from Binance
-│ ├── bybit.py        # Get price from Bybit
-│ ├── bitfinex.py     # Get price from Bitfinex
-│ └── coinbase.py     # Get price from Coinbase
-└── utils.py          # Utilities and helper functions
-
-```
+- Track the prices of various cryptocurrencies in real-time with updates.
+- Display price changes in color depending on rise or decline.
+- Flexible command-line interface for easy usage and control.
+- Set custom intervals for price updates according to your needs.
+- Prices are sorted from highest to lowest for clear comparison.
+- Fully customizable and adaptable to your preferences.
+- Open-source project for transparency and community input.
+- Simple and efficient tracking of crypto prices.
 
 ---
 
-![demo](https://github.com/7GitGuru/crypto-tracker/assets/154711952/0df38415-6b97-4d06-ba31-e6a421d520bf)
-![demo2](https://github.com/7GitGuru/crypto-tracker/assets/154711952/908a0b26-f6ce-41ae-9a6b-6941ecdf4f76)
+
+![image](https://github.com/user-attachments/assets/2627db02-ff53-47a0-995b-3488a596aa13)
+![image](https://github.com/user-attachments/assets/8702fa78-dd51-49e6-bcb8-8f0e7fdff57d)
+![image](https://github.com/user-attachments/assets/adf9c68c-6581-4f0e-9280-f9b02cc516a7)
 
 ---
 
 ## Installation
 
-You can install Crypto Tracker using pip:
+You can install Crypto Tracker(coinprice) using pip:
 
 ```
 pip install coinprice
@@ -70,32 +52,42 @@ pip install coinprice
 
 To track the price of a cryptocurrency, simply run the following command:
 
-[//]: # (**[Here you can find a list of all cryptocurrencies you can use.]&#40;https://github.com/7GitGuru/crypto-tracker/blob/main/coin-names.json&#41;**)
-
-
 ```
 price <coin>
 ```
 
 ```
-price <coin> [--interval time]
+price <coin> [-t time]
 ```
 
 ```
-price <coin> [--exchange name] [--interval time]
+price <coin> [--exchange name]
 ```
 
-Replace `<coin>` with the cryptocurrency you want to track (e.g., bitcoin, ethereum). You can optionally specify the interval (in seconds) for price updates using the `--interval` flag. By default, the interval is set to 15 seconds.
+```
+price <coin> [--exchange name] [-t time]
+```
+
+To track the Anonymous Numbers Price, simply run the folowing command:
+
+```
+price 8num
+```
+
+```
+price 8num [-t time]
+```
+
+Replace `<coin>` with the cryptocurrency you want to track (e.g., btc, eth). You can optionally specify the interval (in seconds) for price updates using the `-t` or `--interval` flag. By default, the interval is set to 30  seconds.
 
 Example usage:
 
 ```
-price btc                           Track the price of Bitcoin from all exchanges.
-price eth --binance                 Track the price of Ethereum from Binance.
-price ltc --coinbase --interval 10  Track the price of Litecoin from Coinbase with a check interval of 10 seconds.
+price btc                        Track the price of Bitcoin from all exchanges.
+price eth --binance              Track Ethereum price from Binance with default interval.
+price ltc --coinbase -t 10       Track Litecoin price on Coinbase in 10 second intervals.
+price 8num                       Track Anonymous Telegram Numbers price.
 ```
-
-### [Check out Telegram version!](https://github.com/7GitGuru/crypto-tracker/tree/telegram)
 
 ## Contributing
 
@@ -103,7 +95,7 @@ Contributions to Crypto Tracker are welcome! If you find any bugs or have sugges
 
 ## License
 
-Crypto Tracker is released under the MIT License. See [LICENSE](https://github.com/7GitGuru/crypto-tracker/blob/main/LICENSE) for details.
+Crypto Tracker is released under the MIT License. See [LICENSE](https://github.com/bohd4nx/coinprice/blob/main/LICENSE) for details.
 
 <h2 align="center">
 
