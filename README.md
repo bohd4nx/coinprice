@@ -34,9 +34,9 @@ You can specify the cryptocurrency you want to track and the module will provide
 ---
 
 
-![image](https://github.com/user-attachments/assets/2627db02-ff53-47a0-995b-3488a596aa13)
-![image](https://github.com/user-attachments/assets/8702fa78-dd51-49e6-bcb8-8f0e7fdff57d)
-![image](https://github.com/user-attachments/assets/adf9c68c-6581-4f0e-9280-f9b02cc516a7)
+![image](https://github.com/user-attachments/assets/4abcba26-f636-4361-ac06-d1478780671d)
+![image](https://github.com/user-attachments/assets/3b5ad5f5-c79f-4301-97bb-0e7703a0fb81)
+![image](https://github.com/user-attachments/assets/7e21d8e0-044b-4aa7-a5ab-053086dec5f6)
 
 ---
 
