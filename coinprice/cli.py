@@ -1,7 +1,7 @@
 import argparse
+
 from colorama import Fore, Style, init
 
-# Initialize Colorama
 init(autoreset=True)
 
 
@@ -33,7 +33,6 @@ def parse_arguments():
                f'   {Fore.CYAN}price 8num{Style.RESET_ALL}                       Track Anonymous Telegram Numbers price.\n'
                '\n'
                f'{Fore.GREEN}This is an open-source project. Visit{Style.RESET_ALL} {Fore.CYAN}https://github.com/bohd4nx/coinprice{Style.RESET_ALL}\n'
-               f'{Fore.GREEN}Support the developer by donating:{Style.RESET_ALL} {Fore.CYAN}https://www.buymeacoffee.com/bohd4n{Style.RESET_ALL}\n'
     )
     parser.add_argument('coin', type=str, help='The cryptocurrency to track or "8num" for anonymous number prices.')
     parser.add_argument('-t', '--interval', type=int, default=30,

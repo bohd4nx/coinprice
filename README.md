@@ -91,7 +91,7 @@ price 8num                       Track Anonymous Telegram Numbers price.
 
 ## Contributing
 
-Contributions to Crypto Tracker are welcome! If you find any bugs or have suggestions for new features, please open an issue or submit a [pull request](https://github.com/7GitGuru/crypto-tracker/pulls) on GitHub.
+Contributions to Crypto Tracker are welcome! If you find any bugs or have suggestions for new features, please open an [issue](https://github.com/bohd4nx/coinprice/issues) or submit a [pull request](https://github.com/bohd4nx/coinprice/pulls) on GitHub.
 
 ## License
 

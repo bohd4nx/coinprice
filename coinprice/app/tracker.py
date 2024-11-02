@@ -1,12 +1,12 @@
 import time
-from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime
 
 from rich.console import Console
 from rich.table import Table
 
 from coinprice.api import binance, coinbase, bitfinex, kucoin, gateio, kraken, huobi, okx
-from coinprice.app.utils import clear_console, terminal_title
+from coinprice.app import clear_console, terminal_title
 
 console = Console()
 
@@ -17,6 +17,14 @@ def fetch_price(exchange, get_price_func, coin):
         return exchange, price, None
     except Exception as e:
         return exchange, None, str(e)
+
+
+def format_price(price):
+    """Format the price based on its value."""
+    if price < 0.1:
+        return f"{price:.6f}"
+    else:
+        return f"{price:,.2f}"
 
 
 def track_prices(args):
@@ -48,22 +56,23 @@ def track_prices(args):
     try:
         while True:
             with ThreadPoolExecutor(max_workers=len(exchanges)) as executor:
-                futures = {executor.submit(fetch_price, exchange, get_price_func, coin): exchange for exchange, get_price_func in exchanges.items()}
+                futures = {executor.submit(fetch_price, exchange, get_price_func, coin): exchange for
+                           exchange, get_price_func in exchanges.items()}
                 results = [future.result() for future in futures]
             valid_results = [(exchange, price) for exchange, price, error in results if price is not None]
             sorted_results = sorted(valid_results, key=lambda x: x[1], reverse=True)
 
             table = Table(show_header=True, header_style="bold blue_violet",
-                          title="[gold3]Made by [link=https://github.com/bohd4nx]@bohd4nx[/link][/gold3]\n\n"
-                                "[turquoise2][link=https://github.com/bohd4nx/coinprice]Github[/link] | [link=https://buymeacoffee.com/bohd4n]Donate[/link] "
-                                "| [link=https://coinprice.bohd4n.dev/]Website[/link][/turquoise2]", title_justify="center")
+                          title="[gold3]Made by [link=https://bohd4n.dev/]@bohd4nx[/link][/gold3]\n",
+                          title_justify="center")
             table.add_column("Exchange", style="bold bright_cyan")
             table.add_column(f"[orange3]{coin.upper()}[/orange3] Price", justify="center")
             table.add_column("Changes", justify="center")
 
             for exchange, price in sorted_results:
+                formatted_price = format_price(price)
                 change = get_change(previous_prices, exchange, price)
-                table.add_row(exchange, f"${format(price, ',.2f')}", change)
+                table.add_row(exchange, f"${formatted_price}", change)
                 previous_prices[exchange] = price
 
             if not table.row_count:
@@ -76,15 +85,15 @@ def track_prices(args):
             # Display the initial Last Updated line
             countdown = interval
             while countdown > 0:
-                console.print(f"Last Updated at {last_updated_time} | {countdown}s", end="\r")
+                console.print(f"  Last Updated at {last_updated_time} | {countdown}s", end="\r")
                 time.sleep(1)
                 countdown -= 1
 
             # Print new line after countdown finishes
-            console.print(f"Last Updated at {last_updated_time} | Updating...")
+            console.print(f"  Last Updated at {last_updated_time} | ...")
 
     except KeyboardInterrupt:
-        console.print("\n\n[bold red3]Exiting...[/bold red3] Made by [link=https://github.com/bohd4nx]@bohd4nx[/link]")
+        console.print("\n\n[bold red3]Exiting...[/bold red3]")
 
 
 def get_change(previous_prices, exchange, price):

@@ -1,10 +1,11 @@
-from coinprice.cli import parse_arguments
-from coinprice.app.tracker import track_prices
-from coinprice.app.fragment import track_fragment_prices
-
 import subprocess
 import sys
+
 import pkg_resources
+
+from coinprice.app.fragment import track_fragment_prices
+from coinprice.app.tracker import track_prices
+from coinprice.cli import parse_arguments
 
 
 def main():
