@@ -1,6 +1,8 @@
 <h2 align="center">
   Crypto Tracker <em>(coinprice)</em><br/>
-  <a href="https://coinprice.bohd4n.dev/" target="_blank">coinprice.bohd4n.dev</a>
+
+[//]: # (  <a href="https://coinprice.bohd4n.dev/" target="_blank">coinprice.bohd4n.dev</a>)
+
 </h2>
 
 <p align="center">
@@ -10,11 +12,10 @@ You can specify the cryptocurrency you want to track and the module will provide
 
 <div align="center">
 
+[![PyPI version](https://img.shields.io/pypi/v/coinprice)](https://pypi.org/project/coinprice/)
 [![PyPi license](https://badgen.net/pypi/license/pip/)](https://pypi.org/project/coinprice/)
 [![Downloads](https://static.pepy.tech/badge/coinprice)](https://pepy.tech/project/coinprice)
 [![PyPI format](https://img.shields.io/pypi/format/coinprice.svg)](https://pypi.org/project/coinprice/)
-[![PyPI version](https://img.shields.io/pypi/v/coinprice)](https://pypi.org/project/coinprice/)
-[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/coinprice.bohd4n.dev.svg)](https://coinprice.bohd4n.dev/)
 
 </div>
 
@@ -96,9 +97,3 @@ Contributions to Crypto Tracker are welcome! If you find any bugs or have sugges
 ## License
 
 Crypto Tracker is released under the MIT License. See [LICENSE](https://github.com/bohd4nx/coinprice/blob/main/LICENSE) for details.
-
-<h2 align="center">
-
-[Donate](https://www.buymeacoffee.com/bohd4n)
-
-</h2>

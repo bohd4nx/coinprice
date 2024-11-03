@@ -2,6 +2,8 @@ import argparse
 
 from colorama import Fore, Style, init
 
+from coinprice.app.utils import check_interval
+
 init(autoreset=True)
 
 
@@ -24,18 +26,18 @@ class CustomHelpFormatter(argparse.RawDescriptionHelpFormatter):
 def parse_arguments():
     parser = argparse.ArgumentParser(
         formatter_class=CustomHelpFormatter,
-        description=f"{Fore.GREEN}Coinprice{Style.RESET_ALL} is a Python module that allows you to track the prices of cryptocurrencies in real-time. "
+        description=f"{Style.BRIGHT}{Fore.GREEN}Coinprice{Style.RESET_ALL} is a Python module that allows you to track the prices of cryptocurrencies in real-time. "
                     "You can specify the cryptocurrency you want to track and the module will provide you with live updates on its price.",
         epilog=f'{Fore.YELLOW}Examples:{Style.RESET_ALL} \n'
                f'   {Fore.CYAN}price btc{Style.RESET_ALL}                        Track Bitcoin price from all available exchanges.\n'
                f'   {Fore.CYAN}price eth --binance{Style.RESET_ALL}              Track Ethereum price from Binance with default interval.\n'
                f'   {Fore.CYAN}price ltc --coinbase -t 10{Style.RESET_ALL}       Track Litecoin price on Coinbase in 10 second intervals.\n'
-               f'   {Fore.CYAN}price 8num{Style.RESET_ALL}                       Track Anonymous Telegram Numbers price.\n'
+               f'   {Fore.CYAN}price 8num{Style.RESET_ALL}                       Track Anonymous Telegram Numbers price from fragment.com\n'
                '\n'
                f'{Fore.GREEN}This is an open-source project. Visit{Style.RESET_ALL} {Fore.CYAN}https://github.com/bohd4nx/coinprice{Style.RESET_ALL}\n'
     )
     parser.add_argument('coin', type=str, help='The cryptocurrency to track or "8num" for anonymous number prices.')
-    parser.add_argument('-t', '--interval', type=int, default=30,
+    parser.add_argument('-t', '--interval', type=check_interval, default=30,
                         help='Interval in seconds to check the price (default: 30).')
     parser.add_argument('--binance', action='store_true', help='Track from Binance.')
     parser.add_argument('--coinbase', action='store_true', help='Track from Coinbase.')

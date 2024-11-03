@@ -23,8 +23,8 @@ def track_fragment_prices(interval):
             previous_price = current_price_ton
             previous_price = current_price_ton
             table = Table(show_header=True, header_style="bold blue_violet",
-                          title="[gold3]Anonymous Numbers Price[/gold3]\n\n"
-                                f"Made by [link=https://bohd4n.dev/]@bohd4nx[/link]", title_justify="center")
+                          title="[bold gold3]Anonymous Numbers Price[/bold gold3]\n\n"
+                                f"Made by [bold link=https://bohd4n.dev/]@bohd4nx[/bold link]", title_justify="center")
             table.add_column("[orange3]TON[/orange3] Price", justify="center")
             table.add_column("[orange3]USD[/orange3] Price", justify="center")
             table.add_column("[orange3][link=https://fragment.com/about#:~:text=collectibles%20are%20subject%20to%20a%205%25%20platform%20fee%20on%20each%20transaction.]Fee[/link][/orange3]", justify="center")
@@ -55,7 +55,7 @@ def track_fragment_prices(interval):
             console.print(f"         Last Updated at {last_updated_time} | ...")
 
     except KeyboardInterrupt:
-        console.print("\n\n[bold red3]Exiting...[/bold red3]")
+        console.print("\n\n" + " " * 20 + "[bold red3]Exiting...[/bold red3]")
 
 
 def calculate_percentage(old_price, new_price):

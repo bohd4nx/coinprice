@@ -1,7 +1,8 @@
 import subprocess
 import sys
+from importlib.metadata import version, PackageNotFoundError
 
-import pkg_resources
+from packaging import version as pkg_version
 
 from coinprice.app.fragment import track_fragment_prices
 from coinprice.app.tracker import track_prices
@@ -21,14 +22,13 @@ def main():
 def check():
     required_version = "13.7.1"
     try:
-        installed_version = pkg_resources.get_distribution("rich").version
-        if pkg_resources.parse_version(installed_version) < pkg_resources.parse_version(required_version):
+        installed_version = version("rich")
+        if pkg_version.parse(installed_version) < pkg_version.parse(required_version):
             print(f"Upgrading 'rich' from version {installed_version} to {required_version}...")
             subprocess.check_call([sys.executable, "-m", "pip", "install", f"rich~={required_version}"])
-    except pkg_resources.DistributionNotFound:
+    except PackageNotFoundError:
         print(f"'rich' not found. Installing version {required_version}...")
         subprocess.check_call([sys.executable, "-m", "pip", "install", f"rich~={required_version}"])
-
 
 check()
 

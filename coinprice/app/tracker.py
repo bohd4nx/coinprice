@@ -63,10 +63,10 @@ def track_prices(args):
             sorted_results = sorted(valid_results, key=lambda x: x[1], reverse=True)
 
             table = Table(show_header=True, header_style="bold blue_violet",
-                          title="[gold3]Made by [link=https://bohd4n.dev/]@bohd4nx[/link][/gold3]\n",
+                          title="Made by [bold link=https://bohd4n.dev/]@bohd4nx[/bold link]\n",
                           title_justify="center")
             table.add_column("Exchange", style="bold bright_cyan")
-            table.add_column(f"[orange3]{coin.upper()}[/orange3] Price", justify="center")
+            table.add_column(f"[bold orange3]{coin.upper()}[/bold orange3] Price", justify="center")
             table.add_column("Changes", justify="center")
 
             for exchange, price in sorted_results:
@@ -93,7 +93,7 @@ def track_prices(args):
             console.print(f"  Last Updated at {last_updated_time} | ...")
 
     except KeyboardInterrupt:
-        console.print("\n\n[bold red3]Exiting...[/bold red3]")
+        console.print("\n\n" + " " * 13 + "[bold red3]Exiting...[/bold red3]")
 
 
 def get_change(previous_prices, exchange, price):

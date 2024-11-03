@@ -5,3 +5,4 @@ rich~=13.7.1
 setuptools~=70.0.0
 bs4~=0.0.2
 beautifulsoup4~=4.8.2
+packaging~=24.0

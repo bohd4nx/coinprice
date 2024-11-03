@@ -21,12 +21,16 @@ setup(
         "rich",
         "colorama",
         "beautifulsoup4",
+        "packaging",
     ],
     classifiers=[
+        'Development Status :: 5 - Production/Stable',
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'Intended Audience :: Financial and Insurance Industry',
         'Topic :: Software Development :: Libraries :: Python Modules',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
@@ -39,9 +43,7 @@ setup(
     project_urls={
         'Documentation': 'https://github.com/bohd4nx/coinprice/blob/main/README.md',
         'Source': 'https://github.com/bohd4nx/coinprice',
-        'Website': 'https://coinprice.bohd4n.dev',
         'Bug Tracker': 'https://github.com/bohd4nx/coinprice/issues',
-        'Funding': 'https://www.buymeacoffee.com/bohd4n',
     },
 
     entry_points={
