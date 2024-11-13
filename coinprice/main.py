@@ -30,6 +30,7 @@ def check():
         print(f"'rich' not found. Installing version {required_version}...")
         subprocess.check_call([sys.executable, "-m", "pip", "install", f"rich~={required_version}"])
 
+
 check()
 
 if __name__ == "__main__":
