@@ -6,12 +6,24 @@ from rich.console import Console
 from rich.table import Table
 
 from coinprice.api import get_price
-from coinprice.app import clear_console, terminal_title
+from coinprice.app.utils import clear_console, terminal_title
 
 console = Console()
 
 
 def fetch_price(exchange, coin):
+    """
+    Fetch price from single exchange safely.
+    
+    Args:
+        exchange (str): Exchange name
+        coin (str): Coin symbol
+        
+    Returns:
+        tuple: (exchange, price, error) where:
+            - price is float or None if error
+            - error is str or None if success
+    """
     try:
         price = get_price(exchange, coin)
         return exchange, price, None
@@ -20,7 +32,15 @@ def fetch_price(exchange, coin):
 
 
 def format_price(price):
-    """Format the price based on its value."""
+    """
+    Format price value with appropriate decimal places.
+    
+    Args:
+        price (float): Price value to format
+        
+    Returns:
+        str: Formatted price string
+    """
     if price < 0.1:
         return f"{price:.6f}"
     else:
@@ -28,6 +48,17 @@ def format_price(price):
 
 
 def track_prices(args):
+    """
+    Track cryptocurrency prices across multiple exchanges.
+    
+    Args:
+        args (Namespace): Arguments containing:
+            - coin (str): Coin to track
+            - interval (int): Update interval in seconds
+            - exchange flags (bool): Which exchanges to include
+            
+    KeyboardInterrupt can be used to stop tracking
+    """
     coin = args.coin.lower()
     interval = args.interval
     previous_prices = {}
@@ -36,7 +67,7 @@ def track_prices(args):
 
     all_exchanges = [
         "Binance", "Coinbase", "Bitfinex", "Gate.io", "Kraken",
-        "KuCoin", "Huobi", "OKX"
+        "KuCoin", "Huobi", "OKX", "Bybit", "MEXC", "WhiteBIT",
     ]
 
     exchanges = [exchange for exchange in all_exchanges if getattr(args, exchange.lower(), False)]
@@ -56,7 +87,7 @@ def track_prices(args):
                           title="Made by [bold link=https://bohd4n.dev/]@bohd4nx[/bold link]\n",
                           title_justify="center")
             table.add_column("Exchange", style="bold bright_cyan")
-            table.add_column(f"[bold orange3]{coin.upper()}[/bold orange3] Price", justify="center")
+            table.add_column(f"[bold orange3]${coin.upper()}[/bold orange3] Price", justify="center")
             table.add_column("Changes", justify="center")
 
             for exchange, price in sorted_results:

@@ -5,7 +5,6 @@ from colorama import Fore, Style
 
 
 def clear_console():
-    """Clear the console screen based on the operating system."""
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
@@ -17,6 +16,18 @@ def terminal_title(coin):
 
 
 def check_interval(value):
+    """
+    Validate update interval value.
+    
+    Args:
+        value (str|int): Interval in seconds
+        
+    Returns:
+        int: Validated interval value
+        
+    Raises:
+        SystemExit: If interval is less than 5 seconds
+    """
     int_value = int(value)
     if int_value < 5:
         phrases = [

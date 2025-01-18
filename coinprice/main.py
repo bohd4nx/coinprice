@@ -4,22 +4,12 @@ from importlib.metadata import version, PackageNotFoundError
 
 from packaging import version as pkg_version
 
-from coinprice.app import track_numprice
-from coinprice.app import track_prices
+from coinprice.app.fragment import track_numprice
+from coinprice.app.tracker import track_prices
 from coinprice.cli import parse_arguments
 
 
-def main():
-    args = parse_arguments()
-
-    if args.coin == '8num':
-        track_numprice(args.interval)
-    else:
-        track_prices(args)
-
-
-# Function to install or upgrade rich to the required version
-def check():
+def check_rich_version():
     required_version = "13.7.1"
     try:
         installed_version = version("rich")
@@ -31,7 +21,23 @@ def check():
         subprocess.check_call([sys.executable, "-m", "pip", "install", f"rich~={required_version}"])
 
 
-check()
+def main(args=None):
+    """
+    Main entry point for both command-line and module usage.
+    
+    Args:
+        args: Optional parsed arguments. If None, will parse from command line.
+    """
+    if args is None:
+        args = parse_arguments()
+
+    check_rich_version()
+
+    if args.coin == '8num':
+        track_numprice(args.interval)
+    else:
+        track_prices(args)
+
 
 if __name__ == "__main__":
     main()

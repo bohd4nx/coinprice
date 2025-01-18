@@ -3,6 +3,6 @@ requests~=2.32.3
 bs4~=0.0.2
 beautifulsoup4~=4.8.2
 colorama~=0.4.6
-rich~=13.7.1
+rich==13.7.1
 argparse~=1.4.0
 packaging~=24.0

@@ -63,7 +63,10 @@ def parse_arguments():
         ('--gateio', 'Track from Gate.io.'),
         ('--kraken', 'Track from Kraken.'),
         ('--huobi', 'Track from Huobi (HTX).'),
-        ('--okx', 'Track from OKX.')
+        ('--okx', 'Track from OKX.'),
+        ('--bybit', 'Track from Bybit.'),
+        ('--mexc', 'Track from MEXC.'),
+        ('--whitebit', 'Track from WhiteBIT.')
     ]
 
     for arg, help_text in exchanges:
